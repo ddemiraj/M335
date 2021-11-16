@@ -11,3 +11,4 @@ function onDeviceReady() {  // Document and device is ready
 function vibrate() {
     navigator.vibrate(5000);
 }
+
