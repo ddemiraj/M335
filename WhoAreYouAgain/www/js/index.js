@@ -4,11 +4,18 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {  // Document and device is ready
-    $('main').load("../page.html");
-    document.getElementById("main").addEventListener("click", vibrate, true);
+    $('nav').load("sites/nav.html");
+    $('main').load("sites/home.html");
+    // document.getElementById("main").addEventListener("click", vibrate, true);
 }
 
-function vibrate() {
-    navigator.vibrate(5000);
-}
+// function vibrate() {
+//     navigator.vibrate(5000);
+// }
 
+// $('element').click(function (e) {}); {
+//     e.preventDefault();
+//     $('main').load("s....,html", function () {
+//         $.getScript;
+//     }
+// }
