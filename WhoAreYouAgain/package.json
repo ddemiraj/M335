@@ -27,5 +27,8 @@
       "android",
       "browser"
     ]
+  },
+  "dependencies": {
+    "firebase": "^9.4.1"
   }
 }
