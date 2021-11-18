@@ -29,7 +29,10 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: http://*" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: http://*"
+    />
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
@@ -45,16 +48,20 @@
     <title></title>
   </head>
   <body>
-    <nav>nav</nav>
-    <main id="main">main</main>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="cordova.js"></script>
-    <script src="res/jquery.min.js"></script>
-    <script src="res/materialize.min.js"></script>
-    <script src="js/index.js"></script>
+    <div id="swiper">
+      <nav>nav</nav>
+      <main id="main">main</main>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="cordova.js"></script>
+      <script src="res/jquery.min.js"></script>
+      <script src="res/touchevents.js"></script>
+      <script src="res/materialize.min.js"></script>
+      <script src="js/database.js"></script>
+      <script src="js/index.js"></script>
+    </div>
   </body>
 </html>
