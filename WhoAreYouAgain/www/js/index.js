@@ -1,64 +1,59 @@
 // Global
-// var globalvar = 'aaaabc';
+var position = 0;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
+function swipe(direction = 0) {
+  position += direction;
+  if (position > 2) {
+    position = 2
+    }
+  if (position < 0) {
+    position = 0
+  }
+  $("#content").removeClass("position-" + 0);
+  $("#content").removeClass("position-" + 1);
+  $("#content").removeClass("position-" + 2);
+  $("#content").addClass("position-" + position);
+
+  $("#navHome").removeClass("activePage");
+  $("#navAdd").removeClass("activePage");
+  $("#navBirth").removeClass("activePage");
+  $("#content").addClass("position-" + position);
+
+  // $("nav section").removeClass("position-" + 0);
+  // $("nav section").removeClass("position-" + 1);
+  // $("nav section").removeClass("position-" + 2);
+  // $("nav section").addClass("position-" + position);
+}
+
 function onDeviceReady() {
-  // Document and device is ready
   $("nav").load("sites/nav.html", function () {
-    loadHomepage();
+    $("#navHome").click(function () {
+      position = 0;
+      swipe();
+    });
+    $("#navAdd").click(function () {
+      position = 1;
+      swipe();
+    });
+    $("#navBirth").click(function () {
+      position = 2;
+      swipe();
+    });
+  });
+  $("#home").load("sites/home.html");
+  $("#add").load("sites/add.html");
+  $("#birthday").load("sites/birthday.html");
+
+  $("html").swipeleft(function () {
+    swipe(1);
+  });
+  $("html").swiperight(function () {
+    swipe(-1);
   });
 }
 
-function loadHomepage() {
-
-    $("main").load("sites/home.html", function () {
-      $("#navAdd").click(loadAddpage);
-      $("#navBirth").click(loadBirthdaypage);
-
-
-      $("#navHome").addClass("activePage");
-      $("#navAdd").removeClass("activePage");
-      $("#navBirth").removeClass("activePage");
-    
-    //   setTimeout(() => { console.log("World!"); }, 2000);
-      $("html").swiperight(function () {
-        loadAddpage();
-      });
-    });
-}
-function loadAddpage() {
-    $("main").load("sites/add.html", function () {
-      $("#navHome").click(loadHomepage);
-      $("#navBirth").click(loadBirthdaypage);
-
-      $("#navHome").removeClass("activePage");
-      $("#navAdd").addClass("activePage");
-      $("#navBirth").removeClass("activePage");
-
-      $("html").swipeleft(function () {
-        loadHomepage();
-      });
-      $("html").swiperight(function () {
-        loadBirthdaypage();
-      });
-  });
-}
-function loadBirthdaypage() {
-    $("main").load("sites/birthday.html", function () {
-      $("#navHome").click(loadHomepage);
-      $("#navAdd").click(loadAddpage);
-
-      $("#navHome").removeClass("activePage");
-      $("#navAdd").removeClass("activePage");
-      $("#navBirth").addClass("activePage");
-
-
-      $("html").swipeleft(function () {
-        loadAddpage();
-      });
-    });
-}
 function vibrate() {
   navigator.vibrate(5000);
 }

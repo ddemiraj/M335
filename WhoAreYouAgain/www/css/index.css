@@ -14,6 +14,7 @@ nav, body, main {
 
 nav {
     box-shadow: none;
+    width: 100vw;
 }
 
 .navButton {
@@ -22,7 +23,7 @@ nav {
     border-right: none;
     border-top: none;
     border-bottom: none;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     color: black;
     padding: 0px;
@@ -44,4 +45,60 @@ nav {
     height: 90%;
     padding-top: 10px;
     margin-bottom: 0px;
+}
+
+.flex {
+    display: flex;
+}
+
+#content {
+    width: 300vw;
+    margin-left: 0vw;
+    transition: margin-left 1s;
+    overflow: hidden;
+}
+#content section {
+    overflow-y: scroll;
+    width: 100vw;
+}
+#content.position-0 {
+    margin-left: 0vw;
+}
+#content.position-1 {
+    margin-left: -100vw;
+}
+#content.position-2 {
+    margin-left: -200vw;
+}
+
+#homeContainer {
+    margin: 10px;
+}
+/* .navContainer {
+    width: 100vw;
+    margin-left: 0vw;
+    transition: margin-left 1s;
+    overflow: hidden;
+}
+.navContainer section {
+    overflow-y: scroll;
+    width: 33.333vw;
+    background-color: black;
+}
+.navContainer.position-0 {
+    margin-left: 0vw;
+}
+.navContainer.position-1 {
+    margin-left: 33.333vw;
+}
+.navContainer.position-2 {
+    margin-left: 66.666vw;
+} */
+
+html {
+    position: fixed;
+}
+
+.singlePerson {
+    height: 10vh;
 }
