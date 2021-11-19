@@ -1,4 +1,4 @@
-setTimeout(function () {
+// setTimeout(function () {
   // -------------------------------------------------------------------
   // Firebase - Daten
   // -------------------------------------------------------------------
@@ -13,7 +13,7 @@ setTimeout(function () {
       var template = Handlebars.compile(`
         <div>
             {{#each user}}
-                <div>
+                <div class="singlePerson valign-wrapper">
                     {{name}} {{firstname}}
                 </div> 
             {{/each}}
@@ -26,4 +26,4 @@ setTimeout(function () {
       console.log("Error: " + error.message);
     }
   );
-}, 1000);
+// }, 1000);
