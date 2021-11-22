@@ -6,7 +6,7 @@ ref.on("value", function (snapshot) {
 
   var template = Handlebars.compile(`
         {{#each user}}
-          <li id="{{../user.@index}}">
+          <li id="{{@key}}">
             <div class="singlePerson valign-wrapper collapsible-header"> {{name}}, {{firstname}}</div> 
             <div class="collapsible-body"> 
               <div class="input-field"> 
@@ -41,7 +41,7 @@ ref.on("value", function (snapshot) {
   $(".delete").click(function () {
     console.log(selectet)
     console.log(ref)
-    firebase.database().ref("user/" + selectet + "/").remove();
+    firebase.database().ref("user/" + selectet).remove();
   });
 });
 
