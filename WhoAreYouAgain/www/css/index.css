@@ -16,6 +16,7 @@ nav, body, main {
 nav {
     box-shadow: none;
     width: 100vw;
+    height: 10vh;
 }
 
 .navButton {
@@ -45,6 +46,7 @@ nav {
     width: 100%;
     height: 90%;
     padding-top: 10px;
+    padding-bottom: 10px;
     margin-bottom: 0px;
 }
 
@@ -56,7 +58,9 @@ nav {
     width: 300vw;
     margin-left: 0vw;
     transition: margin-left 0.2s;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
 }
 #content section {
     overflow-y: scroll;
@@ -75,6 +79,66 @@ nav {
 #homeContainer {
     margin: 10px;
 }
+html {
+    position: fixed;
+}
+
+html>body>main>#content>#home>#homeContainer>#out>li>.singlePerson {
+    height: 10vh;
+    border-top: none !important; /* Todo: fiximportant  */
+    border-left: none !important;
+    border-right: none !important;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#out>li>.singlePerson div {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: black !important;
+}
+
+i {
+    width: 100%;
+    height: 100%;
+}
+
+.collapsible-header {
+    background-color: #74b0d8;
+}
+
+#out {
+    border: none;
+}
+
+.input-field input {
+    color: #000000 !important;
+}
+
+.input-field label {
+    color: #000000 !important;
+}
+
+#addContainder {
+    margin: 20px;
+}
+/* #personWrapper {
+    overflow: scroll;
+    height: 100vh;
+} */
+
+
+
+
+
+
+
+
+
+
+
 /* .navContainer {
     width: 100vw;
     margin-left: 0vw;
@@ -95,16 +159,3 @@ nav {
 .navContainer.position-2 {
     margin-left: 66.666vw;
 } */
-
-html {
-    position: fixed;
-}
-
-.singlePerson {
-    height: 10vh;
-    border-top: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-bottom: black;
-    border-style: solid;
-}

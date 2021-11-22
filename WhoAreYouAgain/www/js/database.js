@@ -1,8 +1,6 @@
 // -------------------------------------------------------------------
 // Initialize Firebase - Anonymous
 // -------------------------------------------------------------------
-var output;
-
 const firebaseConfig = {
     apiKey: "AIzaSyBia5ML5QQYKwxAMIugXAEHpLS4mA5mA5k",
     authDomain: "whoareyouagain-7e649.firebaseapp.com",
