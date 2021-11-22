@@ -1,9 +1,8 @@
 var selectet;
 var ref = firebase.database().ref();
-ref.on("value", function (snapshot) {
-  console.log(snapshot.val());
 
-  $(".insert").focusout(function () {
+$(".insert").click(function () {
+    alert("ininsert");
     var ref = firebase.database().ref('user/');
     ref.push({
         "birthday":     $('#birthday').val(),
@@ -13,8 +12,13 @@ ref.on("value", function (snapshot) {
         "picture":      $('#picture').val(),
         "remarks":      $('#remarks').val(),
     })
+
+    $(':input','#inputForm')
+        .not(':button, :submit, :reset, :hidden')
+        .val('')
+        .prop('checked', false)
+        .prop('selected', false);
   });
-});
 
 $(document).ready(function () {
     $('.datepicker').datepicker();
