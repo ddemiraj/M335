@@ -1,5 +1,6 @@
 var selectet;
 var ref = firebase.database().ref();
+
 ref.on("value", function (snapshot) {
   console.log(snapshot.val());
   data = snapshot.val();
@@ -12,27 +13,27 @@ ref.on("value", function (snapshot) {
 
               <div class="input-field">
                 <label class="active" for="firstname">Vorname</label>
-                <input placeholder="Vorname" id="firstname" type="text" class="validate edit" value={{firstname}}/>
+                <input placeholder="Vorname" id="firstname" type="text" class="validate edit" value={{firstname}}>
               </div>
               <div class="input-field">
                 <label class="active" for="name">Name</label>
-                <input placeholder="Name" id="name" type="text" class="validate edit" value={{name}}/>
+                <input placeholder="Name" id="name" type="text" class="validate edit" value={{name}}>
               </div>
               <div class="input-field">
                 <label class="active" for="contact">Kontakt</label>
-                <input placeholder="Kontakt" id="contact" type="text" class="validate edit" value={{contact}}/>
+                <input placeholder="Kontakt" id="contact" type="text" class="validate edit" value={{contact}}>
               </div>
               <div class="input-field">
                 <label class="active" for="birthday">Geburtstag</label>
-                <input placeholder="Geburtstag" id="birthday" type="text" class="validate datepicker edit" value={{birthday}}/>
+                <input placeholder="Geburtstag" id="birthday" type="date" class="validate edit" value={{birthday}}>
               </div>
               <div class="input-field">
                 <label class="active" for="remarks">Bemerkungen</label>
-                <input placeholder="Bemerkungen" id="remarks" type="text" class="validate edit" value={{remarks}}/>
+                <input placeholder="Bemerkungen" id="remarks" type="text" class="validate edit" value={{remarks}}>
               </div>
               <div class="input-field">
                 <label class="active" for="picture">Bild</label>
-                <input placeholder="Bild" id="picture" type="text" class="validate edit" value={{picture}}/>
+                <img src="{{picture}}" alt="No picture available">
               </div>
             </div>
           </li>
@@ -50,25 +51,20 @@ ref.on("value", function (snapshot) {
     var value     = $(this).val();
     var id        = $(this).parent().parent().parent().attr("id");
     var ref = firebase.database().ref('user/' + id);
-    console.log(attribute)
     ref.update({
       [attribute]: [value]
     })
+    // $(this).parent().siblings('.collapsible-header').addClass("active");
   });
   $(".delete").click(function () {
     console.log(selectet)
     console.log(ref)
     firebase.database().ref("user/" + selectet).remove();
+    vibrate();
   });
 });
 
-// function () {
-//     $(".singlePerson-header").on("taphold", function(){
-//       $(this).hide();
-//     })
-//   }
 $(document).ready(function () {
   $(".collapsible").collapsible();
   $("#modal1").modal();
-  $('.datepicker').datepicker();
 });

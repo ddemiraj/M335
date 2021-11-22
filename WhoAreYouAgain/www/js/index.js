@@ -1,5 +1,6 @@
-// Global
 var position = 0;
+var destinationType;
+var width;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -55,12 +56,58 @@ function onDeviceReady() {
 }
 
 function vibrate() {
-  navigator.vibrate(5000);
+  navigator.vibrate(500);
 }
 
-// $('element').click(function (e) {}); {
-//     e.preventDefault();
-//     $('main').load("s....,html", function () {
-//         $.getScript;
-//     }
-// }
+
+
+//////////////////// Camera /////////////////////////
+
+
+(function () {
+  "use strict";
+
+  document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+
+  function onDeviceReady() {
+    destinationType = navigator.camera.DestinationType;
+  };
+  alert();
+  $(".picture").click(function () {
+    alert("hey, id like a picture!");
+      navigator.camera.getPicture(success, onFail, {
+          quality: 50, destinationType: destinationType.DATA_URL
+      });
+  });
+  // $("#loeschen").click(function () {
+  //     $('#bild').css({
+  //         'display': "none"
+  //     });
+  //     $("#meldung").html('Bildanzeige gelöscht');
+  // });
+  // $("#speichern").click(function () {
+  //     navigator.camera.getPicture(onSuccess2, onFail, {
+  //         quality: 50, destinationType: destinationType.FILE_URI,
+  //         saveToPhotoAlbum: true,
+  //         encodingType: navigator.camera.EncodingType.PNG
+  //     });
+  // });
+  function success(imageData) {
+      success.log(imageData);
+      width = (screen.width * 0.9) + "px";
+      $('#bild').attr('src', "data:image/jpeg;base64," + imageData);
+      $('#bild').css({
+          'display': "block", 'width': width, 'margin': 'auto'
+      });
+      var ref = firebase.database().ref('user/' + id);
+      ref.update({
+        "picture": "data:image/jpeg;base64," + imageData
+      })
+  }
+  function onFail(message) {
+      $('#bild').css({
+          'display': "none"
+      });
+  }
+
+})();
