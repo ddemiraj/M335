@@ -21,11 +21,6 @@ function swipe(direction = 0) {
   $("#navAdd").removeClass("activePage");
   $("#navBirth").removeClass("activePage");
   $("#content").addClass("position-" + position);
-
-  // $("nav section").removeClass("position-" + 0);
-  // $("nav section").removeClass("position-" + 1);
-  // $("nav section").removeClass("position-" + 2);
-  // $("nav section").addClass("position-" + position);
 }
 
 function onDeviceReady() {

@@ -25,9 +25,7 @@ $(document).ready(function () {
 });
 
 
-
 //////////////////// Camera /////////////////////////
-
 
 (function () {
     "use strict";

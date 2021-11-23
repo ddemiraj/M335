@@ -78,7 +78,6 @@ ref.on("value", function (snapshot) {
     }
 
     $(".picture").click(function () {
-      // console.log("a");
       var id = $(this).parent(id).parent().attr("id");
       navigator.camera.getPicture(function (imageData) {
         success(imageData, id)
@@ -88,15 +87,7 @@ ref.on("value", function (snapshot) {
       });
     });
     function success(imageData, id) {
-      console.log(id)
-      console.log(imageData)
-      // var id = $(this).parent().parent().parent().attr("id");
       width = screen.width * 0.9 + "px";
-      // $(".picture")
-      //   .find("#picture")
-      //   .attr("src", "data:image/jpeg;base64," + imageData);
-      // var id = $(this).attr("id");
-      // console.log(id);
       var ref = firebase.database().ref("user/" + id);
       ref.update({
         picture: "data:image/jpeg;base64," + imageData,
