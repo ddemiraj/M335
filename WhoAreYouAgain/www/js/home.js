@@ -67,7 +67,6 @@ ref.on("value", function (snapshot) {
   });
 
   //////////////////// Camera /////////////////////////
-
   (function () {
     "use strict";
 
@@ -94,9 +93,6 @@ ref.on("value", function (snapshot) {
       });
     }
     function onFail(message) {
-      $("#bild").css({
-        display: "none",
-      });
     }
   })();
 });

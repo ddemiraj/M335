@@ -9,7 +9,7 @@ $(".insert").click(function () {
         "contact":      $('#inputForm').find('#contact').val(),
         "firstname":    $('#inputForm').find('#firstname').val(),
         "name":         $('#inputForm').find('#name').val(),
-        "picture":      $('#inputForm').find('#picture').attr('src'),
+        "picture":      $('#inputForm').find('#pictureAdd').attr('src'),
         "remarks":      $('#inputForm').find('#remarks').val(),
     })
 
@@ -26,7 +26,6 @@ $(document).ready(function () {
 
 
 //////////////////// Camera /////////////////////////
-
 (function () {
     "use strict";
   
@@ -35,22 +34,19 @@ $(document).ready(function () {
     function onDeviceReady() {
       destinationType = navigator.camera.DestinationType;
     };
-    $(".picture").click(function () {
+    $(".pictureAdd").click(function () {
         navigator.camera.getPicture(success, onFail, {
             quality: 50, destinationType: destinationType.DATA_URL
         });
     });
     function success(imageData) {
         width = (screen.width * 0.9) + "px";
-        $('#inputForm').find('#picture').attr('src', "data:image/jpeg;base64," + imageData);
-        $('#inputForm').find('#picture').css({
+        $('#inputForm').find('#pictureAdd').attr('src', "data:image/jpeg;base64," + imageData);
+        $('#inputForm').find('#pictureAdd').css({
             'display': "block", 'width': width, 'margin': 'auto'
         });
     }
     function onFail(message) {
-        $('#bild').css({
-            'display': "none"
-        });
     }
   
   })();

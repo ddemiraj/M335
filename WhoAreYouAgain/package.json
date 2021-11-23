@@ -26,9 +26,7 @@
     "plugins": {
       "cordova-plugin-whitelist": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-camera": {
-        "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      },
+      "cordova-plugin-camera": {},
       "cordova-plugin-save-image": {},
       "cordova-plugin-camera-preview": {},
       "cordova-plugin-file": {}

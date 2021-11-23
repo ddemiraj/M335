@@ -7,10 +7,8 @@
 }
 
 nav, body, main {
-    /* background-color: #93d9da; */
     background-color: #74b0d8;
     color: black;
-    /* font-size: 150%; */
 }
 
 nav {
@@ -135,42 +133,11 @@ img {
     margin-bottom: 30px !important;
 }
 
-.picture {
+.picture, .pictureAdd {
     max-width: 100%;
     max-width: 30vh;
 }
-/* #personWrapper {
-    overflow: scroll;
-    height: 100vh;
-} */
 
-
-
-
-
-
-
-
-
-
-
-/* .navContainer {
-    width: 100vw;
-    margin-left: 0vw;
-    transition: margin-left 1s;
-    overflow: hidden;
+#birthdaySite {
+    margin: 30px;
 }
-.navContainer section {
-    overflow-y: scroll;
-    width: 33.333vw;
-    background-color: black;
-}
-.navContainer.position-0 {
-    margin-left: 0vw;
-}
-.navContainer.position-1 {
-    margin-left: 33.333vw;
-}
-.navContainer.position-2 {
-    margin-left: 66.666vw;
-} */
